@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/cusspvz/card-sharing",
   "dependencies": {
+    "bluebird": "^2.9.14",
     "cheerio": "^0.19.0",
     "findhit-class": "^0.1.1",
     "findhit-util": "^0.2.7"
