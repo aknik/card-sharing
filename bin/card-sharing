@@ -2,11 +2,31 @@
 
 "use strict";
 
-var CardSharing = require( '../' );
+var Outputs = require( '../lib/outputs' ),
+    CardSharing = require( '../' );
 
-var cardsharing = new CardSharing();
+var argv = require('yargs')
+    .usage( 'Usage: $0 [options]' )
+    .help( 'help' )
+    .options({
+        'output': {
+            alias : 'o',
+            demand: true,
+            default: 'plain-lines',
+            describe: Object.keys( Outputs ),
+            type: 'string'
+        },
+        'help': {
+            alias: 'h',
+        }
+    })
+    .argv;
 
-cardsharing.render()
+
+new CardSharing({
+    output: argv.output,
+})
+.render()
 .then(function ( output ) {
     console.log( output );
 })
