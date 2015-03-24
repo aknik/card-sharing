@@ -1,12 +1,16 @@
 var Util = require( 'findhit-util' ),
     Promise = require( 'bluebird' ),
 
-    Sources = require( '../../lib/sources' );
+    Config = require( '../../lib/core/config' ),
+    Sources = require( '../../lib/sources' ),
+
+    chai = require( 'chai' ),
+    expect = chai.expect;
 
 describe( "Source", function () {
-
     Util.Object.each( Sources, function ( Source, name ) {
-        describe( name, function ( Source ) {
+
+        describe( name, function () {
             var source = new Source(),
                 fetchPromise;
 
@@ -14,11 +18,28 @@ describe( "Source", function () {
                 fetchPromise = source.fetch();
             });
 
-            it( "should return an array with some configs", function ( done ) {
+            it( "promise should be fulfilled", function () {
+                return fetchPromise;
+            });
+
+            it( "should return an array", function () {
                 return fetchPromise
                 .then(function ( configs ) {
-                    expect( configs ).to.be.instancof( Array );
-                    expect( configs.length ).to.be.more.than( 0 );
+                    expect( configs ).to.be.instanceof( Array );
+                });
+            });
+
+            it( "array shouldn't be empty, otherwise source isn't fetching", function () {
+                return fetchPromise
+                .then(function ( configs ) {
+                    expect( configs ).to.have.length.above( 0 );
+                });
+            });
+
+            it( "all items should be instance of Config", function () {
+                return fetchPromise
+                .each(function ( config ) {
+                    expect( config ).to.be.instanceof( Config );
                 });
             });
 
