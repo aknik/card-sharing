@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var CardSharing = require( '../' );
+
+var cardsharing = new CardSharing();
+
+cardsharing.render()
+.then(function ( output ) {
+    console.log( output );
+})
