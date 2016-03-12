@@ -4,7 +4,7 @@
   "description": "card sharing config generator by parsing online sources",
   "main": "index.js",
   "bin": {
-      "card-sharing": "bin/card-sharing"
+    "card-sharing": "bin/card-sharing"
   },
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha --globals setImmediate,clearImmediate --check-leaks --colors -t 10000 --reporter spec $(find test/* -name '*.test.js')"
@@ -37,6 +37,7 @@
     "cheerio": "^0.19.0",
     "findhit-class": "^0.1.1",
     "findhit-util": "^0.2.7",
+    "knuth-shuffle": "^1.0.1",
     "request": "^2.53.0",
     "yargs": "^3.6.0"
   },
