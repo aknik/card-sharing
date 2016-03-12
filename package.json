@@ -1,6 +1,6 @@
 {
   "name": "card-sharing",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "card sharing config generator by parsing online sources",
   "main": "index.js",
   "bin": {
