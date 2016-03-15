@@ -58,7 +58,7 @@ thats one of my hobbies.
 Currently i'm checking how some satellite demuxing works, and i was too lazy to
 copy C-Lines from free servers every day I wanted to play with it.
 
-The fun thing around this is that i don't ever have time to watch TV. :+1:
+The fun thing around this is that i don't even have time to watch TV. :+1:
 
 
 ### Contributing
